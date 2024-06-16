@@ -3,12 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>Nintendo | Gaming Website Landing Page</title>
   </head>
   <body>
     <header>
       <a href="" class="logo">
-        <img src="./images/nintendo-switch.png" alt="nintendo switch logo" />
+        <img
+          src="images/nintendo-switch.png"
+          alt="nintendo switch logo"
+          height="240"
+          width="240"
+        />
       </a>
       <a href="#" class="menu"> <ion-icon name="grid-outline"></ion-icon></a>
       <ul class="nav">
@@ -20,13 +30,65 @@
         <input type="text" placeholder="Search" />
         <ion-icon name="search-outline"></ion-icon>
       </div>
+      <!--Mobile Screen-->
       <ul class="nav-collapse">
         <li><a href="#">switch news</a></li>
         <li><a href="#">switch online</a></li>
         <li><a href="#">switch classic</a></li>
       </ul>
     </header>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img
+            src="images/super_mario_odyssey_dinosaur_4k.jpeg"
+            alt="Super Mario Odyssey Banner"
+          />
+          <div class="backscene"></div>
+          <div class="banner">
+            <div class="left"></div>
+            <img src="images/mario.png" alt="" />
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="images/pokemon-legends-arceus.jpeg"
+            alt="Pokemon Legends Arceus Banner"
+          />
+          <div class="backscene" style="background: rgba(230, 0, 0, 0.8)"></div>
+          <div class="banner">
+            <div class="left"></div>
+            <img src="images/red.png" alt="" />
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="images/The-Legend-of-Zelda-Breath-of-the-Wild.jpeg"
+            alt="The Legend of Zelda Breath of the Wild Banner"
+          />
+          <div class="backscene" style="background: rgba(230, 0, 0, 0.8)"></div>
+          <div class="banner">
+            <div class="left"></div>
+            <img src="images/link.png" alt="" />
+            <div class="right"></div>
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
 
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -35,5 +97,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
