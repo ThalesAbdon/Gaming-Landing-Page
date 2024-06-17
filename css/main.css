@@ -271,6 +271,13 @@ header {
     height: 50%;
 }
 
+.banner .pokemon {
+    max-width:790px;
+    max-height:790px;
+    width: 60%;
+    height: 60%;
+}
+
 .banner .left .features {
     max-width: 400px;
     margin-bottom: 100px;
@@ -402,7 +409,29 @@ header {
     max-height: 255px;
 }
 
-/* Base CSS (já fornecido) */
+.sci{
+    position: absolute;
+    left:100px;
+    bottom: 60px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.sci ion-icon {
+    color: #ffffff;
+    font-size: 2.5em;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci ion-icon:hover{
+    color: rgba(255,0,0,0.6)
+}
 
 /* Media queries para ajuste responsivo */
 
