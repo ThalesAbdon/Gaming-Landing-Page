@@ -299,6 +299,36 @@
       <li><a href="https://github.com/ThalesAbdon" target="_blank"><ion-icon name="logo-github"></ion-icon></li></a>
       <li><a href="https://br.linkedin.com/in/thales-abdon" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></li></a>
       <li><a href="https://abdonthales.netlify.app/" target="_blank"><ion-icon name="add-outline"></ion-icon></li></a>
+      <li><ion-icon name="mail-outline" id="openEmailModal"></ion-icon></li>
+
+      <div id="emailModal" class="modal">
+        <div class="modal-content">
+          <span class="close">X</span>
+           <h2>Formulário de Contato por Email</h2>
+    <form id="emailForm">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" class="form-control" required></textarea>
+      </div>
+
+      
+            <button type="submit" class="btn-submit">Enviar</button>
+          </form>
+          <img src="images/pokemons.gif" alt="GIF Decorativo Pokemons" class="pokemons-gif">
+          <img src="images/charizard-pokemon.gif" alt="GIF Decorativo Charizard" class="charizard-gif">
+          <img src="images/mario-runner.gif" alt="GIF Decorativo Mário Correndo" class="mario-runner-gif">
+        </div>
+      </div>
     </ul>
     <script
       type="module"

@@ -14,6 +14,21 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft') {
+      swiper.slidePrev();
+      removeFocusFromNavButtons();
+    } else if (event.key === 'ArrowRight') {
+      swiper.slideNext();
+      removeFocusFromNavButtons();
+    }
+  });
+
+  function removeFocusFromNavButtons() {
+    const navButtons = document.querySelectorAll('.swiper-button-prev, .swiper-button-next');
+    navButtons.forEach(button => button.blur());
+  }
+
   const gameInput = document.getElementById('gameInput');
   const searchIcon = document.getElementById('searchIcon');
 
@@ -63,3 +78,38 @@ document.addEventListener('DOMContentLoaded', function () {
     gameInput.value = '';
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const openEmailModalBtn = document.getElementById('openEmailModal');
+  const emailModal = document.getElementById('emailModal');
+  const closeEmailModalBtn = emailModal.querySelector('.close');
+  const emailForm = document.getElementById('emailForm');
+
+  
+  openEmailModalBtn.addEventListener('click', function () {
+    emailModal.style.display = 'block';
+  });
+
+  
+  closeEmailModalBtn.addEventListener('click', function () {
+    emailModal.style.display = 'none';
+  });
+
+  
+  window.addEventListener('click', function (event) {
+    if (event.target === emailModal) {
+      emailModal.style.display = 'none';
+    }
+  });
+
+  
+  emailForm.addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    alert('Email enviado com sucesso!');
+    emailModal.style.display = 'none'; 
+    emailForm.reset(); 
+  });
+});
+
+
+
