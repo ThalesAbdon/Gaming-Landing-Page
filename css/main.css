@@ -711,23 +711,24 @@ textarea {
 
   .swiper .swiper-wrapper .swiper-slide .banner .right h2 {
     font-size: 1.2em;
-    width: 180px;
-    bottom: 380px;
-    left: 15px;
+    width: 280px;
+    bottom: 280px;
+    left: 85px;
     display: flex;
     position: absolute;
   }
 
   .swiper .swiper-wrapper .swiper-slide .banner .right iframe {
-    max-width: 200px;
+    max-width: 250px;
     max-height: 180px;
-    margin-top: 325px;
+    margin-top: 285px;
     position: relative;
     float: right;
+    margin-left: 52.5px;
   }
 
   .sci {
-    left: 80px;
+    left: 75px;
   }
 
   .sci ion-icon {
