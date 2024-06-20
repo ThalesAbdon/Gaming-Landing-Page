@@ -666,6 +666,8 @@ textarea {
 
   .swiper .swiper-wrapper .swiper-slide .banner h1 {
     font-size: 3.2em;
+    margin-left: 52px;
+    width: 100%;
   }
 
   .swiper .swiper-wrapper .swiper-slide .banner .pokemon-title {
@@ -708,22 +710,24 @@ textarea {
   }
 
   .swiper .swiper-wrapper .swiper-slide .banner .right h2 {
-    font-size: 1em;
-    bottom: 285px;
-    left: 55px;
+    font-size: 1.2em;
+    width: 180px;
+    bottom: 380px;
+    left: 15px;
     display: flex;
     position: absolute;
   }
 
   .swiper .swiper-wrapper .swiper-slide .banner .right iframe {
-    max-width: 180px;
-    max-height: 150px;
-    margin-top: 225px;
-    margin-left: 50px;
+    max-width: 200px;
+    max-height: 180px;
+    margin-top: 325px;
+    position: relative;
+    float: right;
   }
 
   .sci {
-    left: 35px;
+    left: 80px;
   }
 
   .sci ion-icon {
