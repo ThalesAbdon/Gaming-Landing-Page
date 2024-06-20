@@ -681,13 +681,13 @@ textarea {
   .swiper .swiper-wrapper .swiper-slide .banner img {
     max-width: 55%;
     max-height: 25%;
-    margin-bottom: 180px;
+    margin-bottom: 220px;
   }
 
   .swiper .swiper-wrapper .swiper-slide .banner .pokemon {
     max-width: 55%;
     max-height: 30%;
-    margin-bottom: 210px;
+    margin-bottom: 250px;
   }
 
   .swiper .swiper-wrapper .swiper-slide .backscene {
@@ -712,7 +712,7 @@ textarea {
   .swiper .swiper-wrapper .swiper-slide .banner .right h2 {
     font-size: 1.2em;
     width: 280px;
-    bottom: 400px;
+    bottom: 350px;
     left: 85px;
     display: flex;
     position: absolute;
