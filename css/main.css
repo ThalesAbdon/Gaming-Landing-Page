@@ -712,7 +712,7 @@ textarea {
   .swiper .swiper-wrapper .swiper-slide .banner .right h2 {
     font-size: 1.2em;
     width: 280px;
-    bottom: 280px;
+    bottom: 400px;
     left: 85px;
     display: flex;
     position: absolute;
@@ -724,7 +724,7 @@ textarea {
     margin-top: 285px;
     position: relative;
     float: right;
-    margin-left: 52.5px;
+    margin-left: 60px;
   }
 
   .sci {
