@@ -710,9 +710,9 @@ textarea {
   }
 
   .swiper .swiper-wrapper .swiper-slide .banner .right h2 {
-    font-size: 1.4em;
+    font-size: 1.5em;
     width: 280px;
-    bottom: 350px;
+    bottom: 340px;
     left: 85px;
     display: flex;
     position: absolute;
