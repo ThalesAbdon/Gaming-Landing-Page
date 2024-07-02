@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide();
   };
 
-  slideInterval = setInterval(nextSlide, 1000); 
+  slideInterval = setInterval(nextSlide, 10000); 
   
   prevButton.addEventListener('click', function() {
     clearInterval(slideInterval); 
