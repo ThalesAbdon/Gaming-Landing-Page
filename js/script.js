@@ -1,83 +1,88 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') {
-      swiper.slidePrev();
-      removeFocusFromNavButtons();
-    } else if (event.key === 'ArrowRight') {
-      swiper.slideNext();
-      removeFocusFromNavButtons();
-    }
-  });
-
-  function removeFocusFromNavButtons() {
-    const navButtons = document.querySelectorAll('.swiper-button-prev, .swiper-button-next');
-    navButtons.forEach(button => button.blur());
-  }
-
+document.addEventListener('DOMContentLoaded', function() {
+  const prevButton = document.getElementById('prevSlide');
+  const nextButton = document.getElementById('nextSlide');
+  const slides = document.querySelectorAll('.slide-box');
+  const radios = document.querySelectorAll('input[name="btn-radio"]');
   const gameInput = document.getElementById('gameInput');
   const searchIcon = document.getElementById('searchIcon');
+  let currentSlide = 0;
+  let slideInterval;
 
- 
-  gameInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      const searchGame = gameInput.value.trim().toUpperCase();
-      
-      switch (searchGame) {
-        case 'MARIO':
-          swiper.slideTo(0); 
-          break;
-        case 'POKEMON':
-          swiper.slideTo(1); 
-          break;
-        case 'ZELDA':
-          swiper.slideTo(2); 
-          break;
-        default:
-          alert('Jogo não encontrado.');
-          break;
+  const showSlide = () => {
+    slides.forEach((slide, index) => {
+      if (index === currentSlide) {
+        slide.style.display = 'block';
+      } else {
+        slide.style.display = 'none';
       }
+    });
 
-      gameInput.value = '';
+    radios.forEach((radio, index) => {
+      radio.checked = (index === currentSlide);
+    });
+  };
+
+  const nextSlide = () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide();
+  };
+
+  slideInterval = setInterval(nextSlide, 1000); 
+  
+  prevButton.addEventListener('click', function() {
+    clearInterval(slideInterval); 
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide();
+  });
+
+  nextButton.addEventListener('click', function() {
+    clearInterval(slideInterval); 
+    nextSlide();
+  });
+
+
+  document.addEventListener('keydown', function(event) {
+    clearInterval(slideInterval);
+    if (event.key === 'ArrowLeft') {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide();
+    } else if (event.key === 'ArrowRight') {
+      nextSlide();
     }
   });
 
-  
-    searchIcon.addEventListener('click', function () {
-    const searchGame = gameInput.value.trim().toUpperCase();
+  const navigateToSlide = () => {
+    const searchTerm = gameInput.value.toLowerCase().trim();
+    let foundIndex = -1;
 
-    switch (searchGame) {
-      case 'MARIO':
-        swiper.slideTo(0); 
-        break;
-      case 'POKEMON':
-        swiper.slideTo(1); 
-        break;
-      case 'ZELDA':
-        swiper.slideTo(2); 
-        break;
-      default:
-        alert('Jogo não encontrado.');
-        break;
+    slides.forEach((slide, index) => {
+      const title = slide.querySelector('h1').textContent.toLowerCase();
+      if (title.includes(searchTerm)) {
+        foundIndex = index;
+      }
+    });
+
+    if (foundIndex !== -1) {
+      currentSlide = foundIndex;
+      showSlide();
+    } else {
+      alert('Slide não encontrado!');
     }
 
     gameInput.value = '';
+  };
+
+  searchIcon.addEventListener('click', navigateToSlide);
+
+  gameInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      navigateToSlide();
+    }
   });
 });
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const openEmailModalBtn = document.getElementById('openEmailModal');
@@ -110,7 +115,4 @@ document.addEventListener('DOMContentLoaded', function () {
     emailForm.reset(); 
   });
 });
-
-
-
 
